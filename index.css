@@ -1,6 +1,11 @@
 @font-face {
-  font-family: 'SFPro';
+  font-family: 'SFProBold';
   src: url('asset/font/SFProFonts/SF-Pro-Display-Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SFProLight';
+  src: url('asset/font/SFProFonts/SF-Pro.ttf') format('truetype');
 }
 
 html,
@@ -11,6 +16,221 @@ body {
 }
 
 :root {
-  font-family: 'SFPro', sans-serif;
+  font-family: 'SFProLight', sans-serif;
   background-color: black;
+  color: white;
+  --text-color-white: white;
+  --text-color-black: black;
+  --secondary-color: #a5a5a5;
+  --primary-color: #333333;
+  --highlight-color: #ff9f0a;
 }
+
+button {
+  font-family: 'SFProLight';
+  font-size: 2rem;
+  border: 0;
+}
+
+/* 
+//
+// Mobile Basic Calculators
+//
+*/
+
+.calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  width: 354px;
+  height: 570px;
+  border: 2px solid white;
+  border-radius: 2%;
+}
+
+.calculator__inner {
+  display: grid;
+  padding: 0px 10px 10px 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.7fr 1.3fr;
+  gap: 7px 0px;
+  grid-template-areas:
+    'calculator__displays'
+    'calculator__buttons';
+}
+
+.calculator__displays {
+  display: grid;
+  font-family: 'SFProLight', sans-serif;
+  font-weight: 200;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    '. . .'
+    '. . .'
+    '. display display';
+  grid-area: calculator__displays;
+}
+
+.calculator__display__current {
+  font-size: 4rem;
+  grid-area: display;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 26px;
+}
+
+.calculator__buttons {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    'clear absolute percent divide'
+    'seven eight nine multiply'
+    'four five six minus'
+    'one two three plus'
+    'zero zero dot equal';
+  grid-area: calculator__buttons;
+}
+
+.calculator__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  padding: 0;
+  width: 70px;
+  height: 70px;
+}
+
+.calculator__button--state-primary {
+  color: var(--text-color-white);
+  background-color: var(--primary-color);
+}
+
+.calculator__button--state-secondary {
+  color: var(--text-color-black);
+  font-family: 'SFProLight', sans-serif;
+  font-weight: 500;
+  background-color: var(--secondary-color);
+}
+
+.calculator__button--state-highlight {
+  color: var(--text-color-white);
+  font-family: 'SFProLight', sans-serif;
+  font-size: 3rem;
+  background-color: var(--highlight-color);
+}
+
+/*
+//
+// TODO: Scientific Calculator
+//
+*/
+
+/*
+//
+// GRID AREA SETUP
+//
+*/
+
+.calculator__button--clear {
+  grid-area: clear;
+}
+.calculator__button--percent {
+  grid-area: percent;
+}
+.calculator__button--divide {
+  grid-area: divide;
+}
+.calculator__button--absolute {
+  position: relative;
+  grid-area: absolute;
+}
+.calculator__button--absolute::after {
+  content: '-';
+  position: absolute;
+  font-size: 1.8rem;
+  transform: translate(120%, 62%);
+  bottom: 50%;
+  right: 50%;
+}
+.calculator__button--absolute::before {
+  content: '+';
+  position: absolute;
+  font-size: 1.2rem;
+  transform: translate(-120%, -80%);
+  top: 50%;
+  left: 50%;
+}
+
+.calculator__button--seven {
+  grid-area: seven;
+}
+.calculator__button--eight {
+  grid-area: eight;
+}
+.calculator__button--nine {
+  grid-area: nine;
+}
+.calculator__button--multiply {
+  grid-area: multiply;
+}
+
+.calculator__button--four {
+  grid-area: four;
+}
+.calculator__button--five {
+  grid-area: five;
+}
+.calculator__button--six {
+  grid-area: six;
+}
+.calculator__button--minus {
+  grid-area: minus;
+}
+
+.calculator__button--one {
+  grid-area: one;
+}
+.calculator__button--two {
+  grid-area: two;
+}
+.calculator__button--three {
+  grid-area: three;
+}
+.calculator__button--plus {
+  grid-area: plus;
+}
+
+.calculator__button--zero {
+  grid-area: zero;
+  display: flex;
+  padding-left: 16%;
+  justify-content: start;
+  border-radius: 65px 65px 65px 65px;
+  -webkit-border-radius: 65px 65px 65px 65px;
+  -moz-border-radius: 65px 65px 65px 65px;
+  width: 100%;
+}
+.calculator__button--dot {
+  grid-area: dot;
+}
+.calculator__button--equal {
+  grid-area: equal;
+}
+
+/* 
+//
+// END GRID AREA SETUP
+//
+*/
