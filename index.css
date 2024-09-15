@@ -3,6 +3,14 @@
   src: url('asset/font/SFProFonts/SF-Pro-Display-Black.otf') format('opentype');
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: 'SFPro', sans-serif;
+  background-color: black;
 }
