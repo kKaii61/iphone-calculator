@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'SFPro';
+  src: url('asset/font/SFProFonts/SF-Pro-Display-Black.otf') format('opentype');
+}
+
+:root {
+  font-family: 'SFPro', sans-serif;
+}
