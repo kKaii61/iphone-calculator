@@ -71,14 +71,22 @@ button {
   font-weight: 200;
   justify-items: end;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 20px 20px;
   grid-template-areas:
-    '. '
+    'after_cal'
     'display';
   grid-area: calculator__displays;
 }
-
+.calculator__displays__after {
+  grid-area: after_cal;
+  font-size: 2rem;
+  color: #999898;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding-right: 26px;
+}
 .calculator__display__current {
   font-size: 4rem;
   grid-area: display;
@@ -86,6 +94,14 @@ button {
   justify-content: end;
   align-items: end;
   padding-right: 26px;
+}
+.calculator__displays__current:after {
+  content: '';
+}
+
+.para-unactive::after {
+  content: ')';
+  color: #999898;
 }
 
 .calculator__buttons {

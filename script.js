@@ -2,8 +2,7 @@ const calculator = document.querySelector('.calculator__inner');
 const display = document.querySelector('.calculator__displays__current');
 const buttons = calculator.querySelector('.calculator__buttons');
 const ac = calculator.querySelector('.calculator__button--clear');
-console.log(calculator);
-console.log(buttons);
+console.log(display);
 
 buttons.addEventListener('click', (e) => {
   if (e.target.matches('button')) {
@@ -27,15 +26,31 @@ buttons.addEventListener('click', (e) => {
     if (action === 'clear') {
       if (
         displayedNum.slice(0, display.textContent.length - 1) == '' ||
-        displayedNum.slice(0, display.textContent.length - 1) == '-'
+        displayedNum.slice(0, display.textContent.length - 1) == '-' ||
+        displayedNum.slice(0, display.textContent.length - 1) == 0
       ) {
+        display.classList.remove('para-unactive');
         display.textContent = '0';
         ac.textContent = 'AC';
+      } else if (
+        displayedNum.slice(
+          display.textContent.length - 1,
+          display.textContent.length
+        ) == ')'
+      ) {
+        display.classList.add('para-unactive');
+        display.textContent = displayedNum.slice(
+          0,
+          display.textContent.length - 1
+        );
       } else {
         display.textContent = displayedNum.slice(
           0,
           display.textContent.length - 1
         );
+      }
+      if (displayedNum.slice(0, display.textContent.length - 1) == ')') {
+        display.classList.add('para-unactive');
       }
     }
     if (action === 'decimal') {
@@ -71,6 +86,25 @@ buttons.addEventListener('click', (e) => {
         display.textContent = (parseFloat(displayedNum) / 100).toFixed(2);
       }
     }
+
+    if (action === 'lpara') {
+      if (display.textContent == '0') {
+        display.textContent = '(';
+        display.classList.add('para-unactive');
+      } else {
+        display.textContent = '(' + displayedNum;
+        display.classList.add('para-unactive');
+      }
+    }
+    if (action === 'rpara') {
+      if (display.textContent == '0') {
+        display.classList.remove('para-unactive');
+      } else {
+        display.textContent = displayedNum + ')';
+        display.classList.remove('para-unactive');
+      }
+    }
+
     if (!action) {
       if (displayedNum === '0') {
         display.textContent = keyContent;
