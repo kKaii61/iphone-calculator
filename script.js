@@ -39,7 +39,15 @@ buttons.addEventListener('click', (e) => {
       }
     }
     if (action === 'decimal') {
-      display.textContent = displayedNum + '.';
+      if (
+        displayedNum.slice(
+          display.textContent.length - 1,
+          display.textContent.length
+        ) == '.'
+      ) {
+      } else {
+        display.textContent = displayedNum + '.';
+      }
     }
     if (action === 'absolute') {
       if (display.textContent == '0') {
