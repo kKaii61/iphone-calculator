@@ -63,6 +63,14 @@ buttons.addEventListener('click', (e) => {
         }
       }
     }
+
+    if (action === 'percent') {
+      if (displayedNum === '0') {
+        display.textContent = '0';
+      } else {
+        display.textContent = (parseFloat(displayedNum) / 100).toFixed(2);
+      }
+    }
     if (!action) {
       if (displayedNum === '0') {
         display.textContent = keyContent;
