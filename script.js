@@ -1,7 +1,7 @@
 const calculator = document.querySelector('.calculator__inner');
 const display = document.querySelector('.calculator__displays__current');
 const buttons = calculator.querySelector('.calculator__buttons');
-
+const ac = calculator.querySelector('.calculator__button--clear');
 console.log(calculator);
 console.log(buttons);
 
@@ -12,6 +12,10 @@ buttons.addEventListener('click', (e) => {
     const keyContent = key.textContent;
     const displayedNum = display.textContent;
 
+    if (display.textContent != '' || display.textContent != '-') {
+      ac.textContent = 'CE';
+    }
+
     if (
       action === 'add' ||
       action === 'minus' ||
@@ -21,17 +25,34 @@ buttons.addEventListener('click', (e) => {
       key.classList.add('is-depressed');
     }
     if (action === 'clear') {
-      display.textContent = 0;
+      if (
+        displayedNum.slice(0, display.textContent.length - 1) == '' ||
+        displayedNum.slice(0, display.textContent.length - 1) == '-'
+      ) {
+        display.textContent = '0';
+        ac.textContent = 'AC';
+      } else {
+        display.textContent = displayedNum.slice(
+          0,
+          display.textContent.length - 1
+        );
+      }
     }
     if (action === 'decimal') {
       display.textContent = displayedNum + '.';
     }
     if (action === 'absolute') {
-      if (display.textContent.includes('-')) {
-        display.textContent = displayedNum.slice(1, display.textContent.length);
-        console.log(display.textContent);
+      if (display.textContent == '0') {
+        ac.textContent = 'AC';
       } else {
-        display.textContent = '-' + displayedNum;
+        if (display.textContent.includes('-')) {
+          display.textContent = displayedNum.slice(
+            1,
+            display.textContent.length
+          );
+        } else {
+          display.textContent = '-' + displayedNum;
+        }
       }
     }
     if (!action) {
