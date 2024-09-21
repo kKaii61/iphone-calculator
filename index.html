@@ -12,28 +12,61 @@
     <div class="calculator">
       <div class="calculator__inner">
         <div class="calculator__displays">
-            <div class="calculator__display__current">0</div>
+            <div class="calculator__displays__current" style="font-size: 4rem; padding: 20px;">0</div>
         </div>
         <div class="calculator__buttons">
-          <button class="calculator__button calculator__button--state-secondary calculator__button--clear">AC</button>
-          <button class="calculator__button calculator__button--state-secondary calculator__button--absolute">⁄</button>
-          <button class="calculator__button calculator__button--state-secondary calculator__button--percent">%</button>
-          <button class="calculator__button calculator__button--state-highlight calculator__button--divide">÷</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--lpara">(</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--rpara">)</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--mc" data-action="mc">mc</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--mplus" data-action="mplus">m+</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--mminus" data-action="mminus">m-</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--mr" data-action="mr">mr</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--second" data-action="second">2</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--powertwo" data-action="power2">x2</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--powerthree" data-action="power3">x3</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--xpowery" data-action="xpowery">xy</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--epowerx" data-action="epowerx" >ex</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--10powerx" data-action="10powerx" >10x</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--xparty" data-action="xparty" >⁄</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--squareroottwo" data-action="squareroot"><sub>2</sub>√x</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--squaretootthree" data-action="squarerootthree"><sub>3</sub>√x</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--xsquarey" data-action="xsquarerooty" ><sub>y</sub>√x</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--ln" data-action="clear">ln</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--log" data-action="log">log</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--factorial" data-action="factorial">x!</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--sin" data-action="sin">sin</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--cos" data-action="cos">cos</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--tan" data-action="tan">tan</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--e" data-action="e">e</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--doublee" data-action="ee">EE</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--rad" data-action="rad">Rad</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--sinh" data-action="sinh">sinh</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--cosh" data-action="cosh">cosh</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--tanh" data-action="tanh">tanh</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--pi" data-action="pi">π</button>
+          <button class="calculator__button calculator__button--desktop calculator__button--state-primary calculator__button--rpara" data-action="rand">Rand</button>
+          
+
+
+          <button class="calculator__button calculator__button--state-secondary calculator__button--clear" data-action="clear">AC</button>
+          <button class="calculator__button calculator__button--state-secondary calculator__button--absolute" data-action="absolute">⁄</button>
+          <button class="calculator__button calculator__button--state-secondary calculator__button--percent" data-action="percent">%</button>
+          <button class="calculator__button calculator__button--state-highlight calculator__button--divide" data-action="divide">÷</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--seven">7</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--eight">8</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--nine">9</button>
-          <button class="calculator__button calculator__button--state-highlight calculator__button--multiply">×</button>
+          <button class="calculator__button calculator__button--state-highlight calculator__button--multiply" data-action="multiply">×</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--four">4</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--five">5</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--six">6</button>
-          <button class="calculator__button calculator__button--state-highlight calculator__button--minus">-</button>
+          <button class="calculator__button calculator__button--state-highlight calculator__button--minus" data-action="minus">-</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--one">1</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--two">2</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--three">3</button>
-          <button class="calculator__button calculator__button--state-highlight calculator__button--add">+</button>
+          <button class="calculator__button calculator__button--state-highlight calculator__button--add" data-action="add">+</button>
           <button class="calculator__button calculator__button--state-primary calculator__button--zero">0</button>
-          <button class="calculator__button calculator__button--state-primary calculator__button--dot">.</button>
-          <button class="calculator__button calculator__button--state-highlight calculator__button--equal">=</button>
+          <button class="calculator__button calculator__button--state-primary calculator__button--dot" data-action="decimal">.</button>
+          <button class="calculator__button calculator__button--state-highlight calculator__button--equal" data-action="equal">=</button>
       </div>
     </div>
   </body>

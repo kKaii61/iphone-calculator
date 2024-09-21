@@ -45,7 +45,7 @@ button {
   margin: auto;
   margin-top: 20px;
   width: 354px;
-  height: 570px;
+  height: 560px;
   border: 2px solid white;
   border-radius: 2%;
 }
@@ -69,13 +69,13 @@ button {
   display: grid;
   font-family: 'SFProLight', sans-serif;
   font-weight: 200;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0fr 1fr 1fr;
-  gap: 0px 0px;
+  justify-items: end;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px 20px;
   grid-template-areas:
-    '. . .'
-    '. . .'
-    '. display display';
+    '. '
+    'display';
   grid-area: calculator__displays;
 }
 
@@ -83,7 +83,8 @@ button {
   font-size: 4rem;
   grid-area: display;
   display: flex;
-  justify-content: flex-end;
+  justify-content: end;
+  align-items: end;
   padding-right: 26px;
 }
 
@@ -112,6 +113,20 @@ button {
   height: 70px;
 }
 
+.calculator__button--state-primary:active {
+  background-color: #585757;
+}
+.calculator__button--state-secondary:active {
+  background-color: #c7c7c7;
+}
+.calculator__button--state-highlight:active {
+  background-color: #febf60;
+}
+
+.calculator__button--state-highlight .is-depressed {
+  background-color: var(--text-color-white);
+  color: var(--highlight-color);
+}
 .calculator__button--state-primary {
   color: var(--text-color-white);
   background-color: var(--primary-color);
@@ -131,11 +146,63 @@ button {
   background-color: var(--highlight-color);
 }
 
+.calculator__button--desktop {
+  display: none;
+}
+
 /*
 //
 // TODO: Scientific Calculator
 //
 */
+
+@media (min-width: 1025px) {
+  .calculator__button--desktop {
+    display: block;
+  }
+  .calculator {
+    width: 1054px;
+    height: 570px;
+  }
+  .calculator__displays {
+    display: grid;
+    font-family: 'SFProLight', sans-serif;
+    font-weight: 200;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      '.'
+      'display';
+    grid-area: calculator__displays;
+  }
+  .calculator__buttons {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-template-areas:
+      '. . . . . . clear absolute percent divide'
+      '. . . . . . seven eight nine multiply'
+      '. . . . . . four five six minus'
+      '. . . . . . one two three plus'
+      '. . . . . . zero zero dot equal';
+    grid-area: calculator__buttons;
+  }
+  .calculator__button {
+    width: 84px;
+    border-radius: 63px 63px 63px 63px;
+    -webkit-border-radius: 63px 63px 63px 63px;
+    -moz-border-radius: 63px 63px 63px 63px;
+  }
+  .calculator__button--desktop {
+    font-size: 1.5rem;
+  }
+  .calculator__button--zero {
+    width: 95%;
+  }
+}
 
 /*
 //
@@ -208,7 +275,7 @@ button {
 .calculator__button--three {
   grid-area: three;
 }
-.calculator__button--plus {
+.calculator__button--add {
   grid-area: plus;
 }
 
