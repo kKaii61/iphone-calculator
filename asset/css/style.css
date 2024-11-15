@@ -40,98 +40,6 @@ button {
 
 /*
 //
-// GRID AREA SETUP
-//
-*/
-
-.calculator__button--clear {
-  grid-area: clear;
-}
-.calculator__button--percent {
-  grid-area: percent;
-}
-.calculator__button--divide {
-  grid-area: divide;
-}
-.calculator__button--absolute {
-  position: relative;
-  grid-area: absolute;
-}
-.calculator__button--absolute::after {
-  content: '-';
-  position: absolute;
-  font-size: 1.8rem;
-  transform: translate(120%, 62%);
-  bottom: 50%;
-  right: 50%;
-}
-.calculator__button--absolute::before {
-  content: '+';
-  position: absolute;
-  font-size: 1.2rem;
-  transform: translate(-120%, -80%);
-  top: 50%;
-  left: 50%;
-}
-
-.calculator__button--seven {
-  grid-area: seven;
-}
-.calculator__button--eight {
-  grid-area: eight;
-}
-.calculator__button--nine {
-  grid-area: nine;
-}
-.calculator__button--multiply {
-  grid-area: multiply;
-}
-
-.calculator__button--four {
-  grid-area: four;
-}
-.calculator__button--five {
-  grid-area: five;
-}
-.calculator__button--six {
-  grid-area: six;
-}
-.calculator__button--minus {
-  grid-area: minus;
-}
-
-.calculator__button--one {
-  grid-area: one;
-}
-.calculator__button--two {
-  grid-area: two;
-}
-.calculator__button--three {
-  grid-area: three;
-}
-.calculator__button--add {
-  grid-area: plus;
-}
-
-.calculator__button--zero {
-  grid-area: zero;
-  display: flex;
-  padding-left: 16%;
-  justify-content: start;
-  border-radius: 65px 65px 65px 65px;
-  -webkit-border-radius: 65px 65px 65px 65px;
-  -moz-border-radius: 65px 65px 65px 65px;
-  width: 100%;
-}
-.calculator__button--dot {
-  grid-area: dot;
-}
-.calculator__button--equal {
-  grid-area: equal;
-}
-
-/*
-//
 // Mobile Basic Calculators
 //
 */
@@ -317,4 +225,96 @@ button {
   .calculator__button--zero {
     width: 95%;
   }
+}
+
+/*
+//
+// GRID AREA SETUP
+//
+*/
+
+.calculator__button--clear {
+  grid-area: clear;
+}
+.calculator__button--percent {
+  grid-area: percent;
+}
+.calculator__button--divide {
+  grid-area: divide;
+}
+.calculator__button--absolute {
+  position: relative;
+  grid-area: absolute;
+}
+.calculator__button--absolute::after {
+  content: '-';
+  position: absolute;
+  font-size: 1.8rem;
+  transform: translate(120%, 62%);
+  bottom: 50%;
+  right: 50%;
+}
+.calculator__button--absolute::before {
+  content: '+';
+  position: absolute;
+  font-size: 1.2rem;
+  transform: translate(-120%, -80%);
+  top: 50%;
+  left: 50%;
+}
+
+.calculator__button--seven {
+  grid-area: seven;
+}
+.calculator__button--eight {
+  grid-area: eight;
+}
+.calculator__button--nine {
+  grid-area: nine;
+}
+.calculator__button--multiply {
+  grid-area: multiply;
+}
+
+.calculator__button--four {
+  grid-area: four;
+}
+.calculator__button--five {
+  grid-area: five;
+}
+.calculator__button--six {
+  grid-area: six;
+}
+.calculator__button--minus {
+  grid-area: minus;
+}
+
+.calculator__button--one {
+  grid-area: one;
+}
+.calculator__button--two {
+  grid-area: two;
+}
+.calculator__button--three {
+  grid-area: three;
+}
+.calculator__button--add {
+  grid-area: plus;
+}
+
+.calculator__button--zero {
+  grid-area: zero;
+  display: flex;
+  padding-left: 16%;
+  justify-content: start;
+  border-radius: 65px 65px 65px 65px;
+  -webkit-border-radius: 65px 65px 65px 65px;
+  -moz-border-radius: 65px 65px 65px 65px;
+  width: 100%;
+}
+.calculator__button--dot {
+  grid-area: dot;
+}
+.calculator__button--equal {
+  grid-area: equal;
 }
