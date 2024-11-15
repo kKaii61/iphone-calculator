@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'SFProLight';
-  src: url('../iphone-calculator/asset/font/SFProFonts/SF-Pro.ttf')
-    format('truetype');
+  src: url('../../asset/font/SF-Pro.ttf') format('truetype');
 }
 
 /*
