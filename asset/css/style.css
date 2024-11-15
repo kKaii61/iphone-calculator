@@ -2,13 +2,11 @@
   font-family: 'SFProLight';
   src: url('../../asset/font/SF-Pro.ttf') format('truetype');
 }
-
 /*
 //
 // RESET
 //
 */
-
 html,
 body {
   margin: 0;
