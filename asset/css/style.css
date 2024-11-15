@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'SFProBold';
-  src: url('/asset/font/SFProFonts/SF-Pro-Display-Black.otf') format('opentype');
+  src: url('asset/font/SFProFonts/SF-Pro-Display-Black.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'SFProLight';
-  src: url('/asset/font/SFProFonts/SF-Pro.ttf') format('truetype');
+  src: url('asset/font/SFProFonts/SF-Pro.ttf') format('truetype');
 }
 
 /*
